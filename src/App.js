@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
+import Weather from './Weather.js';
 
 class App extends Component {
   constructor(props){
@@ -30,6 +31,8 @@ class App extends Component {
         let currentTempMax = res.data.main.temp_max.toFixed(1);
         let currentTempMin = res.data.main.temp_min.toFixed(1);
         let currentHumidity = res.data.main.humidity;
+        let description = res.data.weather[0].main;
+        let wind = res.data.wind.speed;
 
         console.log(res.data);
 
@@ -38,6 +41,8 @@ class App extends Component {
           currentTempMax: currentTempMax,
           currentTempMin: currentTempMin,
           currentHumidity: currentHumidity,
+          description: description,
+          wind: wind,
         });
       })
       .catch((res) => {
@@ -96,10 +101,15 @@ class App extends Component {
   render() {
     return (
       <div id="app" style={{padding: '50px 10px'}}>
-        <Container  style={{backgroundColor: 'white'}}>
+        <Container className="p-5" style={{backgroundColor: 'white'}}>
           <Row>
             <Col xs="12" md="6">
-              <Weather temp={this.state.currentTemp}/>
+              <Weather 
+                temp={this.state.currentTemp} 
+                humidity={this.state.currentHumidity}
+                wind={this.state.wind}
+                description={this.state.description}
+                />
             </Col>
             <Col xs="12" md="6">
               <h2 className="text-center">{this.state.city}</h2>
