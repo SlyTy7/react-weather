@@ -9,6 +9,7 @@ class Weather extends Component {
         <h2 className="mb-3">
           Weather
         </h2>
+        <img src="http://via.placeholder.com/100x100" alt="placeholder"/>
         <p>
           {this.props.description}
         </p>
