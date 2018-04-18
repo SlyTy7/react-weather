@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import Weather from './Weather.js';
+import Location from './Location.js';
 
 class App extends Component {
   constructor(props){
@@ -112,6 +113,8 @@ class App extends Component {
                 />
             </Col>
             <Col xs="12" md="6">
+              <Map 
+              />
               <h2 className="text-center">{this.state.city}</h2>
               <img src="http://via.placeholder.com/300x300" alt="placeholder"/>
             </Col>
