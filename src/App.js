@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap';
 import Weather from './Weather.js';
 import Location from './Location.js';
 
@@ -101,37 +101,40 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app" className='p-1'>
-        <Container className="p-2" style={{backgroundColor: 'white'}}>
-          <Row>
-            <Col xs="12" md="6">
-              <Weather 
-                temp={this.state.currentTemp} 
-                humidity={this.state.currentHumidity}
-                wind={this.state.wind}
-                description={this.state.description}
+      <div id="app" className='p-3'>
+        
+        <Container>
+          <Card body inverse color="primary">
+            <Row>
+              <Col xs="12" md="6">
+                <Weather 
+                  temp={this.state.currentTemp} 
+                  humidity={this.state.currentHumidity}
+                  wind={this.state.wind}
+                  description={this.state.description}
+                  />
+              </Col>
+              <Col xs="12" md="6">
+                <Location 
+                  city={this.state.city}
                 />
-            </Col>
-            <Col xs="12" md="6">
-              <Location 
-                city={this.state.city}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3>Monday</h3>
-            </Col>
-            <Col>
-              <h3>Monday</h3>
-            </Col>
-            <Col>
-              <h3>Monday</h3>
-            </Col>
-            <Col>
-              <h3>Monday</h3>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h3>Monday</h3>
+              </Col>
+              <Col>
+                <h3>Monday</h3>
+              </Col>
+              <Col>
+                <h3>Monday</h3>
+              </Col>
+              <Col>
+                <h3>Monday</h3>
+              </Col>
+            </Row>
+          </Card>
         </Container>
       </div>
     );

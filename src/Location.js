@@ -5,7 +5,7 @@ class Location extends Component {
   render() {
     return (
       <div>
-        <Card body inverse color="primary">
+        <Card body inverse color="danger">
 
           <CardBody>
             <CardTitle>
