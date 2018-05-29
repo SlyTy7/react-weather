@@ -113,7 +113,7 @@ class App extends Component {
                 />
             </Col>
             <Col xs="12" md="6">
-              <Map 
+              <Location 
               />
               <h2 className="text-center">{this.state.city}</h2>
               <img src="http://via.placeholder.com/300x300" alt="placeholder"/>
