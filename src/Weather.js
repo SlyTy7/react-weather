@@ -7,20 +7,21 @@ class Weather extends Component {
   render() {
     return (
       <div>
-        <Card>
-  
-          <CardImg src="http://via.placeholder.com/100x100" alt="placeholder"/>
-          <CardBody>
-            <CardTitle>Card Title</CardTitle>
-            <CardText>This is a wider card with supporting text below as a natural lead-in 
-            to additional content. This content is a little bit longer.
-            </CardText>
+        <Card body inverse color="primary">
 
+          <CardBody>
+            <CardTitle>Current Weather</CardTitle>
+          </CardBody>
+  
+          <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
+
+          <CardBody>
             <CardText>
               {this.props.description}
             </CardText>
-            <CardText>
-              Temp: {this.props.temp}
+            <CardText style={{ fontSize: '48px'}}>
+              {this.props.temp} 
+              <sup style={{ fontSize: '28px'}}>&#176;F</sup>
             </CardText>
             <CardText>
               Humidity: {this.props.humidity}%
