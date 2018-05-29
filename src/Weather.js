@@ -10,7 +10,9 @@ class Weather extends Component {
         <Card body inverse color="primary">
 
           <CardBody>
-            <CardTitle>Current Weather</CardTitle>
+            <CardTitle>
+              <h1>Current Weather</h1>
+            </CardTitle>
           </CardBody>
   
           <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>

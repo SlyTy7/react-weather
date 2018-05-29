@@ -101,8 +101,8 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app" style={{padding: '50px 10px'}}>
-        <Container className="p-5" style={{backgroundColor: 'white'}}>
+      <div id="app" className='p-1'>
+        <Container className="p-2" style={{backgroundColor: 'white'}}>
           <Row>
             <Col xs="12" md="6">
               <Weather 
@@ -114,9 +114,8 @@ class App extends Component {
             </Col>
             <Col xs="12" md="6">
               <Location 
+                city={this.state.city}
               />
-              <h2 className="text-center">{this.state.city}</h2>
-              <img src="http://via.placeholder.com/300x300" alt="placeholder"/>
             </Col>
           </Row>
           <Row>
