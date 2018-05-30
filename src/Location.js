@@ -9,7 +9,7 @@ class Location extends Component {
 
           <CardBody>
             <CardTitle>
-              <h1>Location</h1>
+              Location
             </CardTitle>
           </CardBody>
           

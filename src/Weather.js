@@ -11,7 +11,7 @@ class Weather extends Component {
 
           <CardBody>
             <CardTitle>
-              <h1>Current Weather</h1>
+              Current Weather
             </CardTitle>
           </CardBody>
   
