@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col, Card } from 'reactstrap';
 import Weather from './Weather.js';
 import Location from './Location.js';
+import Days from './Days.js';
 
 class App extends Component {
   constructor(props){
@@ -105,7 +106,8 @@ class App extends Component {
         
         <Container>
           <Card body inverse color="primary">
-            <Row>
+            <Row className="mb-2">
+
               <Col xs="12" md="6">
                 <Weather 
                   temp={this.state.currentTemp} 
@@ -114,25 +116,22 @@ class App extends Component {
                   description={this.state.description}
                   />
               </Col>
+
               <Col xs="12" md="6">
                 <Location 
                   city={this.state.city}
                 />
               </Col>
+
             </Row>
-            <Row>
-              <Col>
-                <h3>Monday</h3>
+            <Row className="mt-2">
+  
+              <Col xs="12">
+                <Days
+
+                />
               </Col>
-              <Col>
-                <h3>Monday</h3>
-              </Col>
-              <Col>
-                <h3>Monday</h3>
-              </Col>
-              <Col>
-                <h3>Monday</h3>
-              </Col>
+
             </Row>
           </Card>
         </Container>
