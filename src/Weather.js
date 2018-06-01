@@ -7,7 +7,7 @@ class Weather extends Component {
   render() {
     return (
       <div>
-        <Card body inverse color="success">
+        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
 
           <CardBody>
             <CardTitle>

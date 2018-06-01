@@ -36,6 +36,7 @@ class App extends Component {
         let description = res.data.weather[0].main;
         let wind = res.data.wind.speed;
 
+        console.log('WEATHER API DATA:');
         console.log(res.data);
 
         this.setState({
@@ -64,7 +65,15 @@ class App extends Component {
       }
     })
       .then((res) => {
-        console.log(res.data)
+        let forecast = res.data.list;
+
+        this.setState({
+          forecast: forecast,
+        });
+
+        console.log('FORECAST API DATA:');
+        console.log(res.data);
+
       })
       .catch((res) => {
         console.log('ERROR: USERS FORECAST API CALL FAILED');
