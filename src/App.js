@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Card } from 'reactstrap';
+import { Container, Card, CardDeck } from 'reactstrap';
 import Weather from './Weather.js';
 import Location from './Location.js';
 import Days from './Days.js';
@@ -120,35 +120,25 @@ class App extends Component {
       <div id="app" className='p-4'>
         
         <Container>
-          <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', boxShadow: '#0c0c0c 7px 7px 20px'
- }}>
-            <Row className="mb-3">
+          <Card 
+            body 
+            inverse 
+            style={{ backgroundColor: '#333', borderColor: '#333', boxShadow: '#0c0c0c 7px 7px 20px' }}>
 
-              <Col xs="12" md="6">
-                <Weather 
-                  temp={this.state.currentTemp} 
-                  humidity={this.state.currentHumidity}
-                  wind={this.state.wind}
-                  description={this.state.description}
-                  />
-              </Col>
+            <CardDeck className='mb-4'>
+              <Weather 
+                temp={this.state.currentTemp} 
+                humidity={this.state.currentHumidity}
+                wind={this.state.wind}
+                description={this.state.description}/>
 
-              <Col xs="12" md="6">
-                <Location 
-                  city={this.state.city}
-                />
-              </Col>
+              <Location 
+                city={this.state.city}/>
+            </CardDeck>
+ 
+            <Days
+              forecast={this.state.forecast}/>
 
-            </Row>
-            <Row className="mt-2">
-  
-              <Col xs="12">
-                <Days
-                  forecast={this.state.forecast}
-                />
-              </Col>
-
-            </Row>
           </Card>
         </Container>
       </div>

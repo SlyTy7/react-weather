@@ -8,13 +8,11 @@ class Weather extends Component {
     return (
       <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
 
-        <CardBody>
-          <CardTitle>
-            CURRENT WEATHER
-          </CardTitle>
-        </CardBody>
+        <CardTitle className='p-4'>
+          CURRENT WEATHER
+        </CardTitle>
 
-        <CardImg src="http://via.placeholder.com/300x100" alt="placeholder"/>
+        <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
 
         <CardBody>
           <CardText>

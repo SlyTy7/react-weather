@@ -6,11 +6,9 @@ class Location extends Component {
     return (
       <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
 
-        <CardBody>
-          <CardTitle>
-            LOCATION
-          </CardTitle>
-        </CardBody>
+        <CardTitle className='p-4'>
+          LOCATION
+        </CardTitle>
         
         <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
 
