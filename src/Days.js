@@ -6,26 +6,37 @@ class Days extends Component {
   render() {
     return (
       <div>
-        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+        <Card body inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
           <CardTitle>
             5 Day Forecast
           </CardTitle>
           <Row>
+
             <Col>
-              <Day />
+              <Day weather={this.props}
+              />
             </Col>
+
             <Col>
-              <Day />
+              <Day weather={this.props.forecastDays}
+              />
             </Col>
+
             <Col>
-              <Day />
+              <Day weather={this.props.forecastDays}
+              />
             </Col>
+
             <Col>
-              <Day />
+              <Day weather={this.props.forecastDays}
+              />
             </Col>
+
             <Col>
-              <Day />
+              <Day weather={this.props.forecastDays}
+              />
             </Col>
+
           </Row>
         </Card>
       </div>
