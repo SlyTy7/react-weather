@@ -5,11 +5,11 @@ class Location extends Component {
   render() {
     return (
       <div>
-        <Card body inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
+        <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
 
           <CardBody>
             <CardTitle>
-              Location
+              LOCATION
             </CardTitle>
           </CardBody>
           

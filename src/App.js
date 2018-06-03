@@ -65,15 +65,16 @@ class App extends Component {
       }
     })
       .then((res) => {
-        let forecast = res.data.list;
-        let forecastDays = [];
-        for(let i = 0; i < forecast.length; i += 8){
-          forecastDays.push(forecast.slice(i, i + 8));
+        let forecastData = res.data.list;
+        let forecast = [];
+
+        for(let i = 0; i < 5; i++){
+          let timeChunk = forecastData.slice((i * 8), (i * 8) + 8);
+          forecast.push(timeChunk);
         }
 
         this.setState({
           forecast: forecast,
-          forecastDays: forecastDays,
         });
 
         console.log('FORECAST API DATA:');
@@ -116,11 +117,12 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app" className='p-3'>
+      <div id="app" className='p-4'>
         
         <Container>
-          <Card body inverse  style={{ backgroundColor: '#333', borderColor: '#333' }}>
-            <Row className="mb-2">
+          <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', boxShadow: '#0c0c0c 7px 7px 20px'
+ }}>
+            <Row className="mb-3">
 
               <Col xs="12" md="6">
                 <Weather 
@@ -143,7 +145,7 @@ class App extends Component {
               <Col xs="12">
                 <Days
                   forecast={this.state.forecast}
-                  forecastDays={this.state.forecastDays}
+                  days={this.state.days}
                 />
               </Col>
 

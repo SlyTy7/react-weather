@@ -7,23 +7,23 @@ class Weather extends Component {
   render() {
     return (
       <div>
-        <Card body inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
+        <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
 
           <CardBody>
             <CardTitle>
-              Current Weather
+              CURRENT WEATHER
             </CardTitle>
           </CardBody>
   
-          <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
+          <CardImg src="http://via.placeholder.com/300x100" alt="placeholder"/>
 
           <CardBody>
             <CardText>
               {this.props.description}
             </CardText>
-            <CardText style={{ fontSize: '48px'}}>
+            <CardText style={{ fontSize: '24px'}}>
               {this.props.temp} 
-              <sup style={{ fontSize: '28px'}}>&#176;F</sup>
+              <sup style={{ fontSize: '14px'}}>&#176;F</sup>
             </CardText>
             <CardText>
               Humidity: {this.props.humidity}%
