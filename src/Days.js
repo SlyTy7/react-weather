@@ -42,7 +42,6 @@ class Days extends Component {
 
           {
             this.props.forecast && this.props.forecast.map( (item, index) => {
-              console.log(item);
               return (
                 <Day 
                   key={'key'+index}
