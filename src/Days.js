@@ -19,58 +19,59 @@ class Days extends Component {
     }
   }
 
-  componentDidMount(){
+  getCurrentDay(){
     let d = new Date();
     let currentDayIndex = d.getDay();
 
     this.setState({
       currentDayIndex: currentDayIndex,
     })
+  }
 
+  componentDidMount(){
+    this.getCurrentDay();
   }
 
   render() {
     return (
-      <div>
-        <Card body inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
-          <CardTitle>
-            5 DAY FORECAST
-          </CardTitle>
-          <Row>
+      <Card body inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
+        <CardTitle>
+          5 DAY FORECAST
+        </CardTitle>
+        <Row>
 
-            <Col>
-              <Day 
-                weather={this.props.forecast} 
-                day='Today'/>
-            </Col>
+          <Col>
+            <Day 
+              weather={this.props.forecast} 
+              day='Today'/>
+          </Col>
 
-            <Col>
-              <Day 
-                weather={this.props.forecast}
-                day='Tomorrow'/>
-            </Col>
+          <Col>
+            <Day 
+              weather={this.props.forecast}
+              day='Tomorrow'/>
+          </Col>
 
-            <Col>
-              <Day 
-                weather={this.props.forecast}
-                day={this.state.days[this.state.currentDayIndex + 2]}/>
-            </Col>
+          <Col>
+            <Day 
+              weather={this.props.forecast}
+              day={this.state.days[this.state.currentDayIndex + 2]}/>
+          </Col>
 
-            <Col>
-              <Day 
-                weather={this.props.forecast}
-                day={this.state.days[this.state.currentDayIndex + 3]}/>
-            </Col>
+          <Col>
+            <Day 
+              weather={this.props.forecast}
+              day={this.state.days[this.state.currentDayIndex + 3]}/>
+          </Col>
 
-            <Col>
-              <Day 
-                weather={this.props.forecast}
-                day={this.state.days[this.state.currentDayIndex + 4]}/>
-            </Col>
+          <Col>
+            <Day 
+              weather={this.props.forecast}
+              day={this.state.days[this.state.currentDayIndex + 4]}/>
+          </Col>
 
-          </Row>
-        </Card>
-      </div>
+        </Row>
+      </Card>
     );
   }
 }

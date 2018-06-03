@@ -4,23 +4,21 @@ import { Card, CardImg,  CardBody, CardTitle, CardText } from 'reactstrap';
 class Location extends Component {
   render() {
     return (
-      <div>
-        <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
+      <Card inverse style={{ backgroundColor: '#418a85', borderColor: '#418a85' }}>
 
-          <CardBody>
-            <CardTitle>
-              LOCATION
-            </CardTitle>
-          </CardBody>
-          
-          <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
+        <CardBody>
+          <CardTitle>
+            LOCATION
+          </CardTitle>
+        </CardBody>
+        
+        <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
 
-          <CardBody>
-            <CardText>{this.props.city}</CardText>
-          </CardBody>
+        <CardBody>
+          <CardText>{this.props.city}</CardText>
+        </CardBody>
 
-        </Card>
-      </div>
+      </Card>
     );
   }
 }
