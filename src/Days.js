@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardGroup } from 'reactstrap';
 import Day from './Day.js';
 
 class Days extends Component {
@@ -15,7 +15,7 @@ class Days extends Component {
         'Thursday',
         'Friday',
         'Saturday'
-      ]
+      ],
     }
   }
 
@@ -38,39 +38,21 @@ class Days extends Component {
         <CardTitle>
           5 DAY FORECAST
         </CardTitle>
-        <Row>
+        <CardGroup>
 
-          <Col>
-            <Day 
-              weather={this.props.forecast} 
-              day='Today'/>
-          </Col>
+          {
+            this.props.forecast && this.props.forecast.map( (item, index) => {
+              console.log(item);
+              return (
+                <Day 
+                  key={'key'+index}
+                  weather={this.props.forecast}
+                  day={this.state.days[this.state.currentDayIndex + index]}/>
+              )
+            })
+          }     
 
-          <Col>
-            <Day 
-              weather={this.props.forecast}
-              day='Tomorrow'/>
-          </Col>
-
-          <Col>
-            <Day 
-              weather={this.props.forecast}
-              day={this.state.days[this.state.currentDayIndex + 2]}/>
-          </Col>
-
-          <Col>
-            <Day 
-              weather={this.props.forecast}
-              day={this.state.days[this.state.currentDayIndex + 3]}/>
-          </Col>
-
-          <Col>
-            <Day 
-              weather={this.props.forecast}
-              day={this.state.days[this.state.currentDayIndex + 4]}/>
-          </Col>
-
-        </Row>
+        </CardGroup>
       </Card>
     );
   }

@@ -145,7 +145,6 @@ class App extends Component {
               <Col xs="12">
                 <Days
                   forecast={this.state.forecast}
-                  days={this.state.days}
                 />
               </Col>
 

@@ -4,12 +4,12 @@ import { Card, CardHeader, Table } from 'reactstrap';
 class Day extends Component {
   render() {
     return (
-      <Card inverse style={{backgroundColor: '#333', borderColor: '#333'}}>
+      <Card inverse style={{backgroundColor: '#333', borderColor: '#fff'}}>
         <CardHeader>
           {this.props.day}
         </CardHeader>
           
-        <Table size='sm' borderless>
+        <Table size='sm'>
           <thead>
             <tr>
               <th>Time</th>
@@ -19,19 +19,19 @@ class Day extends Component {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
+              <th scope="row">6am</th>
+              <td>67</td>
+              <td>75</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
+              <th scope="row">12pm</th>
+              <td>67</td>
+              <td>75</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
+              <th scope="row">6pm</th>
+              <td>67</td>
+              <td>75</td>
             </tr>
           </tbody>
         </Table>
