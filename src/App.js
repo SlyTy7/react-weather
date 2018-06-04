@@ -33,7 +33,7 @@ class App extends Component {
         let currentTempMax = res.data.main.temp_max.toFixed(1);
         let currentTempMin = res.data.main.temp_min.toFixed(1);
         let currentHumidity = res.data.main.humidity;
-        let description = res.data.weather[0].main;
+        let description = res.data.weather[0].description;
         let wind = res.data.wind.speed;
 
         console.log('WEATHER API DATA:');

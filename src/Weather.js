@@ -5,6 +5,11 @@ import Day from './icons/day.svg';
 import Night from './icons/night.svg';
 import CloudyDay from './icons/cloudy-day-1.svg';
 import CloudyNight from './icons/cloudy-night-1.svg';
+import Rainy1 from './icons/rainy-1.svg';
+import Rainy2 from './icons/rainy-2.svg';
+import Rainy3 from './icons/rainy-3.svg';
+import Rainy4 from './icons/rainy-4.svg';
+import Rainy5 from './icons/rainy-5.svg';
 
 
 
@@ -12,18 +17,20 @@ import CloudyNight from './icons/cloudy-night-1.svg';
 class Weather extends Component {
   constructor(props){
     super(props);
-    
+
     this.state = {
-      weatherIcon: Day,
+      weatherIcon: Rainy3,
     }
   }
 
   getWeatherIcon() {
-    let test = this.props.description;
-    console.log(test);
+    let weatherDescription = this.props.description;
+    if(weatherDescription){
+      console.log(weatherDescription);
+    }
   }
 
-  componentDidMount(){
+  componentDidUpdate(){
     this.getWeatherIcon();
   }
 
