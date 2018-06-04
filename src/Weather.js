@@ -1,8 +1,31 @@
 import React, { Component } from 'react';
-import { Card, CardImg,  CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import Cloudy from './icons/cloudy.svg';
+import Day from './icons/day.svg';
+import Night from './icons/night.svg';
+import CloudyDay from './icons/cloudy-day-1.svg';
+import CloudyNight from './icons/cloudy-night-1.svg';
+
+
+
 
 class Weather extends Component {
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      weatherIcon: Day,
+    }
+  }
 
+  getWeatherIcon() {
+    let test = this.props.description;
+    console.log(test);
+  }
+
+  componentDidMount(){
+    this.getWeatherIcon();
+  }
 
   render() {
     return (
@@ -12,7 +35,12 @@ class Weather extends Component {
           CURRENT WEATHER
         </CardTitle>
 
-        <CardImg src="http://via.placeholder.com/300x150" alt="placeholder"/>
+        <img 
+          className="mx-auto"
+          width="40%"
+          height="40%"
+          src={this.state.weatherIcon} 
+          alt="placeholder"/>
 
         <CardBody>
           <CardText>
