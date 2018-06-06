@@ -35,6 +35,7 @@ class Weather extends Component {
   setWeatherIcon(){
     let weatherCode = this.props.weatherCode;
     let newIcon = null;
+    //TODO: Adjust icons to show night version after sunset time 
 
     switch(true) {
       case (weatherCode <= 232 ):
