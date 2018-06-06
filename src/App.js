@@ -29,9 +29,10 @@ class App extends Component {
         let currentTempMax = res.data.main.temp_max.toFixed(1);
         let currentTempMin = res.data.main.temp_min.toFixed(1);
         let currentHumidity = res.data.main.humidity;
-        let description = res.data.weather[0].main;
+        let description = res.data.weather[0].description;
         let weatherCode = res.data.weather[0].id;
         let wind = res.data.wind.speed;
+        let clouds = res.data.clouds.all;
 
         console.log('WEATHER API DATA:');
         console.log(res.data);
@@ -44,6 +45,7 @@ class App extends Component {
           description: description,
           weatherCode: weatherCode,
           wind: wind,
+          clouds: clouds,
         });
       })
       .catch((res) => {
@@ -136,7 +138,8 @@ class App extends Component {
                     humidity={this.state.currentHumidity}
                     wind={this.state.wind}
                     description={this.state.description}
-                    weatherCode={this.state.weatherCode} />
+                    weatherCode={this.state.weatherCode}
+                    clouds={this.state.clouds} />
 
                   <Location 
                     city={this.state.city}/>
