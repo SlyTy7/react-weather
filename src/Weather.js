@@ -10,28 +10,41 @@ import Rainy2 from './icons/rainy-2.svg';
 import Rainy3 from './icons/rainy-3.svg';
 import Rainy4 from './icons/rainy-4.svg';
 import Rainy5 from './icons/rainy-5.svg';
-
-
+import Rainy6 from './icons/rainy-6.svg';
+import Rainy7 from './icons/rainy-7.svg';
+import Snowy1 from './icons/rainy-1.svg';
+import Snowy2 from './icons/rainy-2.svg';
+import Snowy3 from './icons/rainy-3.svg';
+import Snowy4 from './icons/rainy-4.svg';
+import Snowy5 from './icons/rainy-5.svg';
+import Snowy6 from './icons/rainy-6.svg';
+import Thunder from './icons/thunder.svg';
 
 
 class Weather extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
-      weatherIcon: Rainy3,
+      weatherIcon: Day,
+      weatherCode: this.props.weatherCode,
     }
   }
 
-  getWeatherIcon() {
-    let weatherDescription = this.props.description;
-    if(weatherDescription){
-      console.log(weatherDescription);
+
+  setWeatherIcon(){
+    console.log(this.state);
+    const weatherCode = this.props.weatherCode;
+
+    if(weatherCode && ( weatherCode >= 700 && weatherCode < 800)){
+      this.setState({
+        weatherIcon: Day,
+      })
     }
   }
 
-  componentDidUpdate(){
-    this.getWeatherIcon();
+  componentDidMount(){
+    this.setWeatherIcon();
   }
 
   render() {

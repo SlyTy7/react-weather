@@ -33,8 +33,8 @@ class App extends Component {
         let weatherCode = res.data.weather[0].id;
         let wind = res.data.wind.speed;
 
-        //console.log('WEATHER API DATA:');
-        //console.log(res.data);
+        console.log('WEATHER API DATA:');
+        console.log(res.data);
 
         this.setState({
           currentTemp: currentTemp,
@@ -85,7 +85,6 @@ class App extends Component {
 
   //gets data from weather and forecast api calls
   getData(){
-    console.log('getData fired...');
     //gets users current gps coordinates
     axios.get('http://ipinfo.io/json')
       .then((res) => {
