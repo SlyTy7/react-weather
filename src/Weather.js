@@ -107,13 +107,14 @@ class Weather extends Component {
       case (weatherCode === 804 ):
         newIcon = Cloudy;
         break;
+      default:
+        newIcon = null;
+        break;
     }
 
     this.setState({
       weatherIcon: newIcon,
     })
-
-
   }
 
   componentDidMount(){
