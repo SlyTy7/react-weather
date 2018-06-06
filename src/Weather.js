@@ -131,8 +131,9 @@ class Weather extends Component {
 
         <img 
           className="mx-auto"
-          width="40%"
-          height="40%"
+          width="80%"
+          height="80%"
+          style={{maxWidth: '200px'}}
           src={this.state.weatherIcon} 
           alt="placeholder"/>
 
