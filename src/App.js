@@ -29,7 +29,7 @@ class App extends Component {
         let currentTempMax = res.data.main.temp_max.toFixed(1);
         let currentTempMin = res.data.main.temp_min.toFixed(1);
         let currentHumidity = res.data.main.humidity;
-        let description = res.data.weather[0].description;
+        let description = res.data.weather[0].main;
         let weatherCode = res.data.weather[0].id;
         let wind = res.data.wind.speed;
 
@@ -74,8 +74,8 @@ class App extends Component {
           forecast: forecast,
         });
 
-        //console.log('FORECAST API DATA:');
-        //console.log(res.data);
+        console.log('FORECAST API DATA:');
+        console.log(res.data);
 
       })
       .catch((res) => {
@@ -98,7 +98,7 @@ class App extends Component {
             this.setState({
               isDataLoaded: true,
             })
-            console.log('Requests Complete');
+            console.log('API Requests Complete');
           }))
           .catch((err) => {
             console.log('ERROR: WEATHER AND/OR FORECAST API CALL FAILED');
