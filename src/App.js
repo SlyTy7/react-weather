@@ -10,12 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-
+      isDataLoaded: false,
     }
-  }
-
-  componentDidMount() {
-    this.getData();
   }
 
   //gets users current weather
@@ -34,10 +30,11 @@ class App extends Component {
         let currentTempMin = res.data.main.temp_min.toFixed(1);
         let currentHumidity = res.data.main.humidity;
         let description = res.data.weather[0].description;
+        let weatherCode = res.data.weather[0].id;
         let wind = res.data.wind.speed;
 
-        console.log('WEATHER API DATA:');
-        console.log(res.data);
+        //console.log('WEATHER API DATA:');
+        //console.log(res.data);
 
         this.setState({
           currentTemp: currentTemp,
@@ -45,6 +42,7 @@ class App extends Component {
           currentTempMin: currentTempMin,
           currentHumidity: currentHumidity,
           description: description,
+          weatherCode: weatherCode,
           wind: wind,
         });
       })
@@ -52,7 +50,6 @@ class App extends Component {
         console.log('ERROR: USERS WEATHER API CALL FAILED');
       })
   }
-
 
   //gets users weather forecast
   getForecast(lat, lon) {
@@ -77,8 +74,8 @@ class App extends Component {
           forecast: forecast,
         });
 
-        console.log('FORECAST API DATA:');
-        console.log(res.data);
+        //console.log('FORECAST API DATA:');
+        //console.log(res.data);
 
       })
       .catch((res) => {
@@ -88,6 +85,7 @@ class App extends Component {
 
   //gets data from weather and forecast api calls
   getData(){
+    console.log('getData fired...');
     //gets users current gps coordinates
     axios.get('http://ipinfo.io/json')
       .then((res) => {
@@ -97,7 +95,10 @@ class App extends Component {
 
         //passes gps coordinates to weather and forecast requests
         axios.all([this.getWeather(lat, lon), this.getForecast(lat, lon)])
-          .then(axios.spread(function (weather, forecast) {
+          .then(axios.spread( (weather, forecast) => {
+            this.setState({
+              isDataLoaded: true,
+            })
             console.log('Requests Complete');
           }))
           .catch((err) => {
@@ -115,32 +116,40 @@ class App extends Component {
       })
   }
 
+  componentDidMount() {
+    this.getData();
+  }
+
   render() {
     return (
       <div id="app" className='p-4'>
-        
-        <Container>
-          <Card 
-            body 
-            inverse 
-            style={{ backgroundColor: '#333', borderColor: '#333', boxShadow: '#0c0c0c 7px 7px 20px' }}>
+        {
+          this.state.isDataLoaded ? (  
+            <Container>
+              <Card 
+                body 
+                inverse 
+                style={{ backgroundColor: '#333', borderColor: '#333', boxShadow: '#0c0c0c 7px 7px 20px' }}>
 
-            <CardDeck className='mb-4'>
-              <Weather 
-                temp={this.state.currentTemp} 
-                humidity={this.state.currentHumidity}
-                wind={this.state.wind}
-                description={this.state.description}/>
+                <CardDeck className='mb-4'>
+                  <Weather 
+                    temp={this.state.currentTemp} 
+                    humidity={this.state.currentHumidity}
+                    wind={this.state.wind}
+                    description={this.state.description}
+                    weatherCode={this.state.weatherCode} />
 
-              <Location 
-                city={this.state.city}/>
-            </CardDeck>
- 
-            <Days
-              forecast={this.state.forecast}/>
+                  <Location 
+                    city={this.state.city}/>
+                </CardDeck>
+     
+                <Days
+                  forecast={this.state.forecast}/>
 
-          </Card>
-        </Container>
+              </Card>
+            </Container>
+          ) : <div>Loading...</div>
+        }
       </div>
     );
   }
