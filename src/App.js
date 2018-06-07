@@ -36,6 +36,7 @@ class App extends Component {
 
         console.log('WEATHER API DATA:');
         console.log(res.data);
+        console.log('----------');
 
         this.setState({
           currentTemp: currentTemp,
@@ -78,6 +79,7 @@ class App extends Component {
 
         console.log('FORECAST API DATA:');
         console.log(res.data);
+        console.log('----------');
 
       })
       .catch((res) => {
