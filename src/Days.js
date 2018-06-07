@@ -14,6 +14,13 @@ class Days extends Component {
         'Wednesday',
         'Thursday',
         'Friday',
+        'Saturday',
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
         'Saturday'
       ],
     }
@@ -38,6 +45,7 @@ class Days extends Component {
         <CardTitle>
           5 DAY FORECAST
         </CardTitle>
+
         <CardGroup>
 
           {
