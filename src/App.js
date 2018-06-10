@@ -31,7 +31,7 @@ class App extends Component {
         let currentHumidity = res.data.main.humidity;
         let description = res.data.weather[0].description;
         let weatherCode = res.data.weather[0].id;
-        let wind = res.data.wind.speed;
+        let wind = res.data.wind.speed.toFixed(1);
         let clouds = res.data.clouds.all;
 
         console.log('WEATHER API DATA:');

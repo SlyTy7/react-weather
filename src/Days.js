@@ -53,7 +53,7 @@ class Days extends Component {
               return (
                 <Day 
                   key={'key'+index}
-                  weather={this.props.forecast}
+                  weather={this.props.forecast[index]}
                   day={this.state.days[this.state.currentDayIndex + index]}/>
               )
             })
